@@ -1,0 +1,12 @@
+services:
+  db:
+    networks:
+      - mynetwork
+
+  app:
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:latest
+    # container_name: no-container-name-sample-db-1
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    # ports:
+    #   - "5432:5432"
+
+  app:
+    image: node:latest
+    environment:
+      DB_HOST: db # <- set the just service name!
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_NAME: mydatabase
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    working_dir: /app

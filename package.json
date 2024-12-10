@@ -1,0 +1,9 @@
+{
+  "name": "node-postgres-app",
+  "version": "1.0.0",
+  "scripts": {
+  },
+  "dependencies": {
+    "pg": "^8.7.1"
+  }
+}
